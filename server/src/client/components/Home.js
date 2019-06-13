@@ -1,7 +1,12 @@
 import React from "react";
 
 const Home = () => {
-  return <div>i am the home component</div>;
+  return (
+    <div>
+      <div>I AM HOME</div>
+      <button onClick={() => console.log("clicked")}>click me</button>
+    </div>
+  );
 };
 
 export default Home;
