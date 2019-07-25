@@ -29,11 +29,11 @@ const mapStateToProps = state => ({
   users: state.users
 });
 
-function loadData() {
-  console.log("i am trying to load data");
+function loadData(store) {
+  return store.dispatch(fetchUsers());
 }
 
-export {loadData};
+export { loadData };
 export default connect(
   mapStateToProps,
   { fetchUsers }
