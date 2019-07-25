@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 import { fetchUsers } from "../actions";
 
 class UsersList extends Component {
-    constructor(){
-        super()
-    }
+  constructor() {
+    super();
+  }
   componentDidMount() {
     this.props.fetchUsers();
   }
@@ -14,7 +14,7 @@ class UsersList extends Component {
     return this.props.users.map(user => {
       return <li key={user.id}>{user.name}</li>;
     });
-  };
+  }
   render() {
     return (
       <div>
@@ -25,10 +25,15 @@ class UsersList extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   users: state.users
 });
 
+function loadData() {
+  console.log("i am trying to load data");
+}
+
+export {loadData};
 export default connect(
   mapStateToProps,
   { fetchUsers }
