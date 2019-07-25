@@ -39909,6 +39909,17 @@ function Header(_ref) {
   var auth = _ref.auth;
 
   console.log("my auth", auth);
+
+  var authButton = auth ? _react2.default.createElement(
+    "a",
+    { href: "/api/logout" },
+    "Logout"
+  ) : _react2.default.createElement(
+    "a",
+    { href: "/api/auth/google" },
+    "Login"
+  );
+
   return _react2.default.createElement(
     "div",
     null,
@@ -39916,12 +39927,27 @@ function Header(_ref) {
       _reactRouterDom.Link,
       { to: "/" },
       "React SSR"
+    ),
+    _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement(
+        _reactRouterDom.Link,
+        { to: "/users" },
+        "Users"
+      ),
+      _react2.default.createElement(
+        _reactRouterDom.Link,
+        { to: "/admins" },
+        "Admins"
+      ),
+      authButton
     )
   );
 }
-var mapStateToProps = function mapStateToProps(auth) {
+var mapStateToProps = function mapStateToProps(state) {
   return {
-    auth: auth
+    auth: state.auth
   };
 };
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(Header);
