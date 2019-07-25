@@ -17,7 +17,7 @@ function Header({ auth }) {
         <Link to="/" className="brand-logo">
           React SSR
         </Link>
-        <ul id="nav-mobile" class="right">
+        <ul id="nav-mobile" className="right hide-on-med-and-down">
           <li>
             <Link to="/users">Users</Link>
           </li>
