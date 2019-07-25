@@ -149,6 +149,8 @@ module.exports = require("redux");
 "use strict";
 
 
+__webpack_require__(17);
+
 var _express = __webpack_require__(6);
 
 var _express2 = _interopRequireDefault(_express);
@@ -346,7 +348,7 @@ var UsersList = function (_Component) {
   _createClass(UsersList, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      // this.props.fetchUsers();
+      this.props.fetchUsers();
     }
   }, {
     key: "renderUsers",
@@ -473,6 +475,12 @@ exports.default = function () {
       return state;
   }
 };
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports) {
+
+module.exports = require("babel-polyfill");
 
 /***/ })
 /******/ ]);
