@@ -38327,18 +38327,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Home = function Home() {
   return _react2.default.createElement(
     "div",
-    null,
+    { className: "center-align", style: { marginTop: "200px" } },
     _react2.default.createElement(
-      "div",
+      "h3",
       null,
-      "I AM HOME"
+      "Welcome"
     ),
     _react2.default.createElement(
-      "button",
-      { onClick: function onClick() {
-          return console.log("clicked");
-        } },
-      "click me"
+      "p",
+      null,
+      "Checkout these awesome features"
     )
   );
 };
@@ -39921,27 +39919,43 @@ function Header(_ref) {
   );
 
   return _react2.default.createElement(
-    "div",
+    "nav",
     null,
     _react2.default.createElement(
-      _reactRouterDom.Link,
-      { to: "/" },
-      "React SSR"
-    ),
-    _react2.default.createElement(
       "div",
-      null,
+      { className: "nav-wrapper" },
       _react2.default.createElement(
         _reactRouterDom.Link,
-        { to: "/users" },
-        "Users"
+        { to: "/", className: "brand-logo" },
+        "React SSR"
       ),
       _react2.default.createElement(
-        _reactRouterDom.Link,
-        { to: "/admins" },
-        "Admins"
-      ),
-      authButton
+        "ul",
+        { id: "nav-mobile", "class": "right" },
+        _react2.default.createElement(
+          "li",
+          null,
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: "/users" },
+            "Users"
+          )
+        ),
+        _react2.default.createElement(
+          "li",
+          null,
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: "/admins" },
+            "Admins"
+          )
+        ),
+        _react2.default.createElement(
+          "li",
+          null,
+          authButton
+        )
+      )
     )
   );
 }

@@ -12,14 +12,22 @@ function Header({ auth }) {
   );
 
   return (
-    <div>
-      <Link to="/">React SSR</Link>
-      <div>
-        <Link to="/users">Users</Link>
-        <Link to="/admins">Admins</Link>
-        {authButton}
+    <nav>
+      <div className="nav-wrapper">
+        <Link to="/" className="brand-logo">
+          React SSR
+        </Link>
+        <ul id="nav-mobile" class="right">
+          <li>
+            <Link to="/users">Users</Link>
+          </li>
+          <li>
+            <Link to="/admins">Admins</Link>
+          </li>
+          <li>{authButton}</li>
+        </ul>
       </div>
-    </div>
+    </nav>
   );
 }
 const mapStateToProps = state => ({
