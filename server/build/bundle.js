@@ -191,13 +191,13 @@ var fetchAdmins = exports.fetchAdmins = function fetchAdmins() {
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router-config");
+module.exports = require("react-redux");
 
 /***/ }),
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-redux");
+module.exports = require("react-router-config");
 
 /***/ }),
 /* 4 */
@@ -274,7 +274,7 @@ var _express = __webpack_require__(9);
 
 var _express2 = _interopRequireDefault(_express);
 
-var _reactRouterConfig = __webpack_require__(2);
+var _reactRouterConfig = __webpack_require__(3);
 
 var _expressHttpProxy = __webpack_require__(10);
 
@@ -312,6 +312,12 @@ app.get("*", function (req, res) {
     var route = _ref.route;
 
     return route.loadData ? route.loadData(store) : null;
+  }).map(function (promise) {
+    if (promise) {
+      return new Promise(function (resolve, reject) {
+        promise.then(resolve).catch(resolve);
+      });
+    }
   });
 
   Promise.all(promises).then(function () {
@@ -400,7 +406,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = __webpack_require__(3);
+var _reactRedux = __webpack_require__(2);
 
 var _actions = __webpack_require__(1);
 
@@ -486,7 +492,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterConfig = __webpack_require__(2);
+var _reactRouterConfig = __webpack_require__(3);
 
 var _Header = __webpack_require__(14);
 
@@ -532,7 +538,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(5);
 
-var _reactRedux = __webpack_require__(3);
+var _reactRedux = __webpack_require__(2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -648,7 +654,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = __webpack_require__(3);
+var _reactRedux = __webpack_require__(2);
 
 var _actions = __webpack_require__(1);
 
@@ -741,11 +747,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _server = __webpack_require__(18);
 
-var _reactRedux = __webpack_require__(3);
+var _reactRedux = __webpack_require__(2);
 
 var _reactRouterDom = __webpack_require__(5);
 
-var _reactRouterConfig = __webpack_require__(2);
+var _reactRouterConfig = __webpack_require__(3);
 
 var _serializeJavascript = __webpack_require__(19);
 
